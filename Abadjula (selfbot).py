@@ -44,7 +44,7 @@ try:
     async def on_ready():
         CLEAR()
         print(f"{Fore.RED}>{Fore.RESET}{Fore.YELLOW}Authentakating your token...{Fore.RESET} {Fore.LIGHTBLACK_EX}{token}{Fore.RESET}")
-        print(f"{Fore.RED}>{Fore.RESET}{Fore.YELLOW}Connecting to your bot...{Fore.RESET} {Fore.LIGHTBLACK_EX}{client.user}{Fore.RESET}")
+        print(f"{Fore.RED}>{Fore.RESET}{Fore.YELLOW}Connecting to your account...{Fore.RESET} {Fore.LIGHTBLACK_EX}{client.user}{Fore.RESET}")
         await asyncio.sleep(3)
         print(f"{Fore.GREEN}Connected!{Fore.RESET}".center(width))
         await asyncio.sleep(1)
