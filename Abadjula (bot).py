@@ -93,11 +93,12 @@ try:
         amount_of_channels = len(guild.channels)
         amount_of_roles = len(guild.roles)
         for member in guild.members:
-            if member.guild_permissions.ban_members:
-                print(Fore.RESET + "[" + Fore.BLUE + "*" + Fore.RESET + "]" + Fore.RED + "Cannot ban {} because they are admin".format(member))
-            else:
+            try:
                 await member.ban()
                 print(Fore.YELLOW + '[' + Fore.RESET + Fore.BLUE + '*' + Fore.RESET + Fore.YELLOW + ']' + Fore.RESET + Fore.MAGENTA + 'Banned {}'.format(member))
+    
+            except:
+                print(Fore.RESET + "[" + Fore.BLUE + "*" + Fore.RESET + "]" + Fore.RED + "Cannot ban {} because they are admin".format(member))
         for channel in guild.channels:
             try:
                 await channel.delete()
@@ -139,11 +140,11 @@ try:
         amount_of_channels = len(guild.channels)
         amount_of_roles = len(guild.roles)
         for member in guild.members:
-            if member.guild_permissions.ban_members:
-                print(Fore.RESET + "[" + Fore.BLUE + "*" + Fore.RESET + "]" + Fore.RED + "Cannot ban {} because they are admin".format(member))
-            else:
+            try:
                 await member.ban()
                 print(Fore.YELLOW + '[' + Fore.RESET + Fore.BLUE + '*' + Fore.RESET + Fore.YELLOW + ']' + Fore.RESET + Fore.MAGENTA + 'Banned {}'.format(member))
+            except:
+                print(Fore.RESET + "[" + Fore.BLUE + "*" + Fore.RESET + "]" + Fore.RED + "Cannot ban {} because they are admin".format(member))
         for channel in guild.channels:
             try:
                 await channel.delete()
@@ -185,11 +186,11 @@ try:
         await ctx.message.delete()
         guild = ctx.guild
         for member in guild.members:
-            if member.guild_permissions.ban_members:
-                print(Fore.RESET + "[" + Fore.BLUE + "*" + Fore.RESET + "]" + Fore.RED + "Cannot ban {} because they are admin".format(member))
-            else:
+            try:
                 await member.ban()
                 print(Fore.YELLOW + '[' + Fore.RESET + Fore.BLUE + '*' + Fore.RESET + Fore.YELLOW + ']' + Fore.RESET + Fore.MAGENTA + 'Banned {}'.format(member))
+            except:
+                print(Fore.RESET + "[" + Fore.BLUE + "*" + Fore.RESET + "]" + Fore.RED + "Cannot ban {} because they are admin".format(member))
 
     @ban_all.error
     async def ban_all_error(ctx, error):
